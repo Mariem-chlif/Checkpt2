@@ -1,0 +1,36 @@
+ALGORITHM Prob2S1  
+
+VAR
+j,i,n,m:INTEGER;
+sum:INTEGER:=0;
+set1 : ARRAY_OF INTEGER[n];
+set2:ARRAY_OF INTEGER[m];
+array : ARRAY_OF INTEGER[]:=[];
+    
+BEGIN
+read(n);
+read(m);
+read(set1 );
+read(set2);
+
+FOR i FROM 0 TO n-1  DO
+array.push(set1[i]);
+    
+END_FOR
+
+FOR j FROM 0 TO m-1   DO
+array.push(set2[j]);
+END_FOR
+
+FOR i FROM 0 TO array.length-1   DO
+    FOR j FROM 0 TO i-1   DO
+        IF (array[i]==array[j] AND i<>j ) THEN
+        sum = sum +array[i]
+        END_IF
+    
+    END_FOR
+END_FOR
+write(sum);
+END
+
+
